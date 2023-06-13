@@ -120,7 +120,7 @@ body {
 
 body {
   box-sizing: border-box;
-  background-color: white;
+  background-color: var(--background);
   font-family: var(--main-font);
   color: var(--color-text);
   font-size: 16px;
@@ -200,10 +200,15 @@ h5 {
 }
 
 .main-page {
+  background-color: var(--background);
   padding-top: 65px;
   @include breakpoint(phone) {
     padding-top: 100px;
   }
+}
+
+.main-home-page {
+  background: var(--background);
 }
 
 .block {
@@ -261,7 +266,7 @@ h5 {
   cursor: pointer;
   &.btn--rounded {
     font-size: 12px;
-    background: #fff;
+    background: var(--background);
     display: inline-block;
     border-radius: 50px;
     padding: 11px 20px;
@@ -328,7 +333,7 @@ h5 {
   left: 0;
   z-index: 999;
   height: 65px;
-  color: #fff;
+  color: var(--text-primary);
   box-shadow: none;
   transition: all 0.3s ease;
   @include breakpoint(phone) {
@@ -338,7 +343,7 @@ h5 {
     &:before,
     &:after,
     span {
-      background-color: #fff;
+      background-color: var(--text-primary);
     }
   }
   .container {
@@ -347,7 +352,7 @@ h5 {
     align-items: center;
   }
   .site-logo {
-    color: #fff;
+    color: var(--text-primary);
   }
   .site-header__btn-avatar {
     display: none;
@@ -374,7 +379,7 @@ h5 {
       }
     }
     i {
-      color: #fff;
+      color: var(--text-primary);
       z-index: 10;
       transition: all 0.3s ease;
       position: relative;
@@ -390,7 +395,7 @@ h5 {
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    background-color: #fff;
+    background-color: var(--background);
     transition: all 0.3s ease;
     border-left: 1px solid #e5e5e5;
     @include breakpoint(tablet-lg) {
@@ -406,6 +411,7 @@ h5 {
       width: 100%;
       font-size: 15px;
       font-weight: 500;
+      color: var(--text-primary);
       text-align: left;
       @include breakpoint(tablet-lg) {
         display: none;
@@ -418,14 +424,14 @@ h5 {
       font-size: 15px;
       font-weight: 500;
       width: 100%;
-      color: #000;
+      color: var(--text-primary);
       display: block;
       text-align: left;
       padding: 15px 18px;
       @include breakpoint(tablet-lg) {
         width: auto;
         padding: 0;
-        color: #fff;
+        color: var(--text-primary);
         margin-right: 76px;
         display: inline-block;
         font-size: 14px;
@@ -433,27 +439,27 @@ h5 {
     }
   }
   &.site-header--fixed {
-    border-bottom: 1px solid #e5e5e5;
-    background-color: #fff;
+    border-bottom: 1px solid var(--border-primary);
+    background-color: var(--background);
     .btn-hamburger {
       &:before,
       &:after,
       span {
-        background-color: #000;
+        background-color: var(--text-primary);
       }
     }
     a,
     i {
-      color: #000;
+      color: var(--text-primary);
     }
     button {
-      color: #000;
+      color: var(--text-primary);
       i {
-        color: #000;
+        color: var(--text-primary);
       }
     }
     .site-logo {
-      color: #000;
+      color: var(--text-primary);
     }
   }
   .search-form-wrapper {
@@ -484,7 +490,7 @@ h5 {
     height: 100vh;
     right: 0;
     transition: all 0.3s ease;
-    background-color: #fff;
+    background-color: var(--background);
     @include breakpoint(tablet-lg) {
       position: static;
       height: auto;
@@ -533,7 +539,7 @@ h5 {
       width: 80%;
       text-align: center;
       padding-right: 40px;
-      background-color: #fff;
+      background-color: var(--background);
       @include breakpoint(tablet-lg) {
         width: 300px;
         padding: 0 19px;
@@ -582,12 +588,12 @@ h5 {
       display: flex;
     }
     &:before {
-      color: #fff;
+      color: var(--background);
       content: "\e80b";
       font-family: "icons";
     }
     &:hover {
-      background: #fff;
+      background: var(--background);
       &:before {
         color: #000;
       }
@@ -616,7 +622,7 @@ h5 {
       display: block;
     }
     &:before {
-      background: #fff;
+      background: var(--background);
       content: "";
       left: 0;
       bottom: 0;
@@ -682,7 +688,7 @@ h5 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: #fafafa;
+    background-color: var(--background);
     @include breakpoint(phone) {
       height: 90vh;
     }
@@ -711,7 +717,7 @@ h5 {
       }
       h2 {
         font-size: 36px;
-        color: #fff;
+        color: var(--background);
         font-weight: 600;
         line-height: 120%;
         margin-bottom: 45px;
@@ -722,7 +728,7 @@ h5 {
       }
       .btn-shop {
         display: flex;
-        color: #fff;
+        color: var(--background);
         align-items: center;
         i {
           justify-content: center;
@@ -730,7 +736,7 @@ h5 {
           display: flex;
           width: 40px;
           height: 40px;
-          color: #fff;
+          color: var(--background);
           font-size: 15px;
           margin-right: 10px;
           background-color: var(--color-orange);
@@ -811,11 +817,15 @@ h5 {
     .featured-item__content {
       margin-top: auto;
       position: relative;
+      color: var(--text-primary);
       z-index: 2;
+      a {
+        color: var(--text-primary);
+      }
       h3 {
         font-weight: 400;
         font-size: 20px;
-        color: #fff;
+        color: var(--text-primary);
         margin-bottom: 15px;
         line-height: 150%;
         @include breakpoint(phone) {
@@ -834,7 +844,8 @@ h5 {
     .product__price h4 {
       &:before {
         content: "";
-        background-color: #eee;
+        color: var(--text-primary);
+        background-color: var(--background);
         background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee);
         animation-name: skeleton;
         animation-duration: 1.2s;
@@ -861,6 +872,7 @@ h5 {
     .product__description {
       h3 {
         &:before {
+          color: var(--text-primary);
           height: 20px;
           width: 80%;
         }
@@ -878,7 +890,7 @@ h5 {
   }
   .product__image {
     height: 250px;
-    background-color: #fafafa;
+    background-color: var(--background);
     margin-bottom: 20px;
     position: relative;
     @include breakpoint(phone) {
@@ -902,7 +914,8 @@ h5 {
       font-size: 12px;
       border: none;
       height: 32px;
-      background-color: #fff;
+      color: var(--text-primary);
+      background-color: var(--background);
       position: absolute;
       box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.16);
       @include breakpoint(phone) {
@@ -914,7 +927,7 @@ h5 {
       }
       &:hover,
       &.btn-heart--active {
-        color: #fff;
+        color: var(--text-primary);
         background-color: var(--color-orange);
       }
     }
@@ -929,7 +942,7 @@ h5 {
       position: absolute;
     }
     .product__discount {
-      color: #fff;
+      color: var(--background);
       padding: 5px 9px;
       border-radius: 40px;
       font-weight: 500;
@@ -941,6 +954,7 @@ h5 {
   }
   .product__description {
     h3 {
+      color: var(--text-primary);
       margin-bottom: 9px;
       font-weight: 300;
       font-size: 13px;
@@ -951,6 +965,7 @@ h5 {
     .product__price {
       display: flex;
       h4 {
+        color: var(--text-primary);
         font-weight: 400;
         font-size: 15px;
         @include breakpoint(phone) {
@@ -980,11 +995,16 @@ h5 {
     display: flex;
     align-items: center;
     margin-bottom: 35px;
+    color: var(--text-primary);
     justify-content: space-between;
     @include breakpoint(phone) {
       margin-bottom: 65px;
     }
+    a {
+      color: var(--text-primary);
+    }
     h3 {
+      color: var(--text-primary);
       font-weight: 300;
       font-size: 18px;
       @include breakpoint(phone) {
@@ -1002,7 +1022,7 @@ h5 {
 .subscribe {
   .subscribe__content {
     padding: 35px 20px;
-    background-color: #fafafa;
+    background-color: var(--background);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -1032,7 +1052,7 @@ h5 {
     }
     h4 {
       font-size: 18px;
-      color: #fff;
+      color: var(--text-primary);
       margin-bottom: 20px;
       line-height: 130%;
       margin-right: auto;
@@ -1052,7 +1072,7 @@ h5 {
         padding: 0 25px;
         color: #ababab;
         font-size: 13px;
-        background-color: #fff;
+        background-color: var(--background);
         border-radius: 30px;
         margin-right: 25px;
         @include breakpoint(phone) {
@@ -1087,6 +1107,7 @@ h5 {
       margin-bottom: 93px;
     }
     h4 {
+      color: var(--text-primary);
       font-size: 23px;
       font-weight: 300;
       text-align: center;
@@ -1127,12 +1148,12 @@ h5 {
       object-fit: contain;
       width: 45px;
       height: 35px;
-      fill: #000;
+      fill: var(--text-primary);
       margin-right: 15px;
     }
     h6 {
       display: flex;
-      color: #000;
+      color: var(--text-primary);
       font-weight: 300;
       align-items: center;
       margin-bottom: 33px;
@@ -1176,7 +1197,7 @@ h5 {
       }
       li {
         font-size: 14px;
-        color: #000;
+        color: var(--text-primary);
         margin-bottom: 12px;
         @include breakpoint(phone) {
           margin-bottom: 15px;
@@ -1198,7 +1219,7 @@ h5 {
   }
   .site-footer__bottom {
     padding: 20px 0;
-    border-top: 1px solid #ebebeb;
+    border-top: 1px solid var(--border-primary);
     @include breakpoint(phone) {
       padding: 33px 0;
     }
@@ -1248,6 +1269,7 @@ h5 {
     }
     .data-item__content {
       h4 {
+        color: var(--text-primary);
         margin-bottom: 20px;
       }
       p {
@@ -1276,7 +1298,7 @@ h5 {
   font-weight: 300;
   font-size: 14px;
   display: flex;
-  color: #000;
+  color: var(--background);
   margin-bottom: 18px;
   align-items: center;
   .checkbox__check {
@@ -1307,7 +1329,7 @@ h5 {
     overflow: hidden;
   }
   input:checked + .checkbox__check {
-    background-color: #dbdbdb;
+    background-color: var(--background);
   }
 }
 
@@ -1340,7 +1362,7 @@ h5 {
       position: fixed;
       z-index: 99;
       padding: 20px 20px;
-      background-color: #fff;
+      background-color: var(--background);
       transition: all 0.4s ease;
       @include breakpoint(phone) {
         top: 134px;
@@ -1372,8 +1394,8 @@ h5 {
       padding: 8px 16px;
       z-index: 100;
       font-size: 12px;
-      background-color: #fff;
-      border-bottom: 1px solid #e6e6e6;
+      background-color: var(--background);
+      border-bottom: 1px solid var(--border-primary);
       @include breakpoint(phone) {
         top: 100px;
       }
@@ -1394,7 +1416,7 @@ h5 {
     .products-filter__block {
       padding: 20px 21px;
       margin-bottom: 13px;
-      border: 1px solid #e6e6e6;
+      border: 1px solid var(--border-primary);
       @include breakpoint(tablet-lg) {
         padding: 24px 31px;
       }
@@ -1422,7 +1444,7 @@ h5 {
         }
       }
       .rc-slider-track {
-        background: #000000;
+        background: var(--text-primary);
       }
     }
     .products-filter__block__content {
@@ -1441,11 +1463,12 @@ h5 {
         font-size: 18px;
         margin-right: auto;
         font-weight: 300;
+        color: var(--text-primary);
         @include breakpoint(phone) {
           font-size: 24px;
         }
         span {
-          color: #d8d8d8;
+          color: var(--text-primary);
         }
       }
       .products-filter-btn {
@@ -1462,8 +1485,9 @@ h5 {
         right: 0;
         display: none;
         z-index: 50;
-        border: 1px solid #e5e5e5;
-        background-color: #fff;
+        color: var(--text-primary);
+        border: 1px solid var(--border-primary);
+        background-color: var(--background);
         &.products-order-open {
           display: block;
         }
@@ -1480,6 +1504,7 @@ h5 {
           margin-top: 0;
         }
         .products__filter__select {
+          color: var(--text-primary);
           display: flex;
           align-items: center;
           margin-bottom: 20px;
@@ -1494,20 +1519,24 @@ h5 {
             margin-bottom: 0;
           }
           h4 {
+            color: var(--text-primary);
             font-size: 13px;
             @include breakpoint(phone) {
               font-size: 16px;
             }
           }
           .select-wrapper {
+            color: var(--text-primary);
             margin-left: auto;
             @include breakpoint(phone) {
               margin-left: 15px;
             }
             select {
+              color: var(--text-primary);
               font-size: 13px;
               padding: 6px 25px 6px 8px;
               @include breakpoint(phone) {
+                color: var(--text-primary);
                 padding: 9px 38px 9px 12px;
                 font-size: 15px;
               }
@@ -1523,7 +1552,7 @@ h5 {
   font-weight: 300;
   font-size: 14px;
   display: flex;
-  color: #000;
+  color: var(--text-primary);
   margin-bottom: 18px;
   align-items: center;
   .checkbox__check {
@@ -1533,7 +1562,7 @@ h5 {
     flex-shrink: 0;
     position: relative;
     margin-right: 18px;
-    border: 1px solid #d4d4d4;
+    border: 1px solid var(--border-primary);
     &:before {
       display: block;
       content: "";
@@ -1545,7 +1574,7 @@ h5 {
       height: 12.5px;
       transform: scale(1) rotate(45deg);
       z-index: 100;
-      border: 1px solid black;
+      border: 1px solid var(--text-primary);
       -webkit-transition: all 0.2s linear;
       -o-transition: all 0.2s linear;
       transition: all 0.2s linear;
@@ -1561,14 +1590,14 @@ h5 {
     position: relative;
     width: calc(100% / 6);
     input:checked + .checkbox__check {
-      background-color: #000;
-      border-color: #000;
+      background-color: var(--text-primary);
+      border-color: var(--text-primary);
       &:before {
         opacity: 0;
       }
     }
     input:checked ~ p {
-      color: #fff;
+      color: var(--text-primary);
     }
     input {
       display: none;
@@ -1586,9 +1615,9 @@ h5 {
       position: relative;
       padding-bottom: 100%;
       border-left: none;
-      border-top: 1px solid #d4d4d4;
-      border-bottom: 1px solid #d4d4d4;
-      border-right: 1px solid #d4d4d4;
+      border-top: 1px solid var(--border-primary);
+      border-bottom: 1px solid var(--border-primary);
+      border-right: 1px solid var(--border-primary);
       .checkbox__color {
         position: absolute;
         top: 8px;
@@ -1599,7 +1628,7 @@ h5 {
     }
     &:first-of-type {
       .checkbox__check {
-        border-left: 1px solid #d4d4d4;
+        border-left: 1px solid var(--border-primary);
       }
     }
   }
@@ -1655,9 +1684,10 @@ h5 {
     transform: translateY(-50%);
   }
   select {
+    color: var(--text-primary);
     font-size: 15px;
     padding: 9px 38px 9px 12px;
-    border: 1px solid #d8d8d8;
+    border: 1px solid var(--border-primary);
     border-radius: 50px;
     option {
       font-size: 15px;
@@ -1684,17 +1714,18 @@ h5 {
   padding: 0 20px;
   display: inline-flex;
   align-items: center;
-  border: 1px solid #d8d8d8;
+  border: 1px solid var(--border-primary);
   @include breakpoint(phone) {
     height: 49px;
   }
   .quantity-button__btn {
+    color: var(--text-primary);
     font-size: 23px;
     font-weight: 400;
   }
   span {
     font-size: 18px;
-    color: #000;
+    color: var(--text-primary);
     margin: 0 18px;
     font-weight: 700;
   }
@@ -1744,6 +1775,7 @@ h5 {
         margin-bottom: 0;
       }
       i {
+        color: var(--text-primary);
         display: block;
         font-size: 30px;
         margin-bottom: 30px;
@@ -1753,7 +1785,7 @@ h5 {
         }
       }
       h4 {
-        color: #000;
+        color: var(--text-primary);
         font-weight: 700;
         font-size: 15px;
         margin-bottom: 25px;
@@ -1763,7 +1795,7 @@ h5 {
         }
       }
       p {
-        color: #000;
+        color: var(--text-primary);
         font-size: 13px;
         line-height: 145%;
         text-align: left;
@@ -1820,6 +1852,7 @@ h5 {
       .btn {
         margin: 0 15px;
         padding: 8px 22px;
+        color: var(--text-primary);
         @include breakpoint(phone) {
           padding: 12px 28px;
         }
@@ -1845,6 +1878,7 @@ h5 {
       margin-bottom: 0;
     }
     h5 {
+      color: var(--text-primary);
       font-weight: 300;
       font-size: 13px;
       margin-bottom: 19px;
@@ -1854,19 +1888,24 @@ h5 {
     }
     .checkbox-color-wrapper {
       .checkbox-color {
+        color: var(--text-primary);
         width: 30px;
         height: 30px;
         margin-right: 8px;
         border: none;
         @include breakpoint(phone) {
+          color: var(--text-primary);
           width: 43px;
           height: 43px;
           margin-right: 13px;
         }
         .checkbox__check {
+          color: var(--text-primary);
           border: 1px solid #d4d4d4;
         }
         .checkbox__color {
+          color: var(--text-primary);
+
           top: 4px;
           left: 4px;
           right: 4px;
@@ -1913,6 +1952,7 @@ h5 {
   .product__name {
     font-size: 20px;
     font-weight: 300;
+    color: var(--text-primary);
     margin-bottom: 9px;
     @include breakpoint(phone) {
       font-size: 30px;
@@ -2196,6 +2236,7 @@ h5 {
     }
   }
   .cart__title {
+    color: var(--text-primary);
     font-size: 20px;
     font-weight: 700;
     line-height: 140%;
@@ -2205,6 +2246,7 @@ h5 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    color: var(--text-primary);
     .btn {
       margin-left: 20px;
     }
@@ -2270,7 +2312,8 @@ h5 {
     height: 40px;
     width: 100%;
     margin-bottom: 18px;
-    border: 1px solid #d8d8d8;
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 30px;
     @include breakpoint(phone) {
       height: 49px;
@@ -2282,7 +2325,7 @@ h5 {
       margin-right: 70px;
     }
     @include placeholder {
-      color: #ababab;
+      color: var(--border-primary);
     }
   }
   .cart-actions__total {
@@ -2337,7 +2380,7 @@ h5 {
       display: block;
       flex-wrap: wrap;
       padding: 10px 0;
-      color: #000;
+      color: var(--text-primary);
       @include breakpointMax(phone) {
         width: 100% !important;
       }
@@ -2426,6 +2469,7 @@ h5 {
       padding: 0;
     }
     h3 {
+      color: var(--text-primary);
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 10px;
@@ -2436,6 +2480,10 @@ h5 {
       color: #c4c4c4;
     }
   }
+}
+
+.dark-toggle {
+  margin-left: 25px;
 }
 
 .btn-cart {

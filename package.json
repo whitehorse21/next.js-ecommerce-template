@@ -27,6 +27,7 @@
     "react-rater": "^5.1.1",
     "react-redux": "^7.2.1",
     "react-select": "latest",
+    "react-toggle-dark-mode": "^1.1.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-persist": "^6.0.0",
@@ -35,6 +36,7 @@
     "sass": "^1.26.10",
     "swiper": "^6.5.1",
     "swr": "latest",
+    "use-local-storage": "^3.0.0",
     "use-onclickoutside": "latest"
   },
   "devDependencies": {

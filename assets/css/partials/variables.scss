@@ -1,46 +1,66 @@
 :root {
   // fonts
-  --main-font: 'Poppins';
-  --font-title: 'Archivo';
+  --main-font: "Poppins";
+  --font-title: "Archivo";
 
   // colors
-  --color-orange: #FBB03B;
-  --color-orange-light: #FFF3DF;
+  --color-orange: #fbb03b;
+  --color-orange-light: #fff3df;
   --color-black: #333333;
   --color-text: #868686;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-gray: #706c61;
-  --color-red: #FF0000;
+  --color-red: #ff0000;
+
+  --background: white;
+  --text-primary: black;
+  --border-primary: #e5e5e5;
+}
+
+[data-theme="dark"] {
+  --main-font: "Poppins";
+  --font-title: "Archivo";
+
+  --color-orange: #fbb03b;
+  --color-orange-light: #fff3df;
+  --color-black: #333333;
+  --color-text: #868686;
+  --color-white: #ffffff;
+  --color-gray: #706c61;
+  --color-red: #ff0000;
+
+  --background: black;
+  --text-primary: white;
+  --border-primary: #706c61;
 }
 
 @mixin inputPlaceholder() {
-  $selector: '';
+  $selector: "";
   $prefixes: (
-      moz: "::-moz",
-      webkit: "::-webkit",
-      ie: ":-ms"
+    moz: "::-moz",
+    webkit: "::-webkit",
+    ie: ":-ms",
   );
   @each $prop, $value in $prefixes {
-      @if $prop != "moz" {
-          $selector: #{$value}-input-placeholder;
-      } @else {
-          $selector: #{$value}-placeholder;
+    @if $prop != "moz" {
+      $selector: #{$value}-input-placeholder;
+    } @else {
+      $selector: #{$value}-placeholder;
+    }
+    @if & {
+      &#{$selector} {
+        @content;
       }
-      @if & {
-          &#{$selector} {
-              @content;
-          }
-      } @else {
-          #{$selector} {
-              @content;
-          }
+    } @else {
+      #{$selector} {
+        @content;
       }
+    }
   }
   &::placeholder {
     @content;
   }
 }
-
 
 @keyframes skeleton {
   0% {
