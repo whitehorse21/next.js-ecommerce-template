@@ -343,7 +343,7 @@ h5 {
     &:before,
     &:after,
     span {
-      background-color: var(--text-primary);
+      background-color: var(--background);
     }
   }
   .container {
@@ -352,7 +352,7 @@ h5 {
     align-items: center;
   }
   .site-logo {
-    color: var(--text-primary);
+    color: var(--background);
   }
   .site-header__btn-avatar {
     display: none;
@@ -379,7 +379,7 @@ h5 {
       }
     }
     i {
-      color: var(--text-primary);
+      color: var(--background);
       z-index: 10;
       transition: all 0.3s ease;
       position: relative;
@@ -431,7 +431,7 @@ h5 {
       @include breakpoint(tablet-lg) {
         width: auto;
         padding: 0;
-        color: var(--text-primary);
+        color: var(--background);
         margin-right: 76px;
         display: inline-block;
         font-size: 14px;

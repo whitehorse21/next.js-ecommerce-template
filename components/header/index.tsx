@@ -106,6 +106,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
             className="dark-toggle"
             checked={theme === "light" ? false : true}
             onChange={toggleTheme}
+            moonColor={!onTop ? "white" : "black"}
+            sunColor={!onTop ? "black" : "white"}
             size={24}
           />
           <Link href="/cart" legacyBehavior>
