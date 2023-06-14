@@ -10,6 +10,7 @@ import "swiper/swiper.scss";
 import "rc-slider/assets/index.css";
 import "react-rater/lib/react-rater.css";
 import "../assets/css/styles.scss";
+import ThemeProvider from "../components/context/theme-provider";
 
 import * as gtag from "./../utils/gtag";
 
@@ -23,7 +24,9 @@ if (isProduction) {
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Fragment>
-    <Component {...pageProps} />
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
   </Fragment>
 );
 

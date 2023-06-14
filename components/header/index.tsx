@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { useSelector } from "react-redux";
 import useOnClickOutside from "use-onclickoutside";
 import Logo from "../../assets/icons/logo";
@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { RootState } from "store";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import useLocalStorage from "use-local-storage";
+import { ThemeContext } from "components/context/theme-context";
 
 type HeaderType = {
   isErrorPage?: Boolean;
@@ -25,17 +25,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const navRef = useRef(null);
   const searchRef = useRef(null);
 
-  const defaultDark = false;
-  const [theme, setTheme] = useLocalStorage(
-    "theme",
-    defaultDark ? "dark" : "light"
-  );
-
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    console.log(theme);
-  };
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const headerClass = () => {
     if (window.pageYOffset === 0) {
@@ -115,7 +105,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <DarkModeSwitch
             className="dark-toggle"
             checked={theme === "light" ? false : true}
-            onChange={switchTheme}
+            onChange={toggleTheme}
             size={24}
           />
           <Link href="/cart" legacyBehavior>

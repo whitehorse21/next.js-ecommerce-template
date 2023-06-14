@@ -15,6 +15,7 @@
   --background: white;
   --text-primary: black;
   --border-primary: #e5e5e5;
+  --slider-track: black;
 }
 
 [data-theme="dark"] {
@@ -29,9 +30,10 @@
   --color-gray: #706c61;
   --color-red: #ff0000;
 
-  --background: black;
+  --background: #202020;
   --text-primary: white;
-  --border-primary: #706c61;
+  --border-primary: #33322e;
+  --slider-track: #fbb03b;
 }
 
 @mixin inputPlaceholder() {

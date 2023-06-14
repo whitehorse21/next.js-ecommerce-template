@@ -464,6 +464,10 @@ h5 {
   }
   .search-form-wrapper {
     &.search-form--active {
+      a,
+      i {
+        color: var(--text-primary);
+      }
       .search-form {
         top: 0;
         @include breakpoint(tablet-lg) {
@@ -534,7 +538,13 @@ h5 {
     }
   }
   &.search-form--active {
+    a,
+    i {
+      color: var(--text-primary) !important;
+      z-index: 10;
+    }
     input {
+      color: var(--text-primary);
       padding: 0 8px;
       width: 80%;
       text-align: center;
@@ -545,10 +555,6 @@ h5 {
         padding: 0 19px;
         text-align: left;
       }
-    }
-    i {
-      color: #000 !important;
-      z-index: 10;
     }
   }
 }
@@ -671,6 +677,7 @@ h5 {
         }
         .data-item__content {
           h4 {
+            color: var(--text-primary);
             font-size: 14px;
             margin-bottom: 7px;
           }
@@ -942,7 +949,7 @@ h5 {
       position: absolute;
     }
     .product__discount {
-      color: var(--background);
+      color: var(--color-white);
       padding: 5px 9px;
       border-radius: 40px;
       font-weight: 500;
@@ -1421,6 +1428,7 @@ h5 {
         padding: 24px 31px;
       }
       > button {
+        color: var(--text-primary);
         font-size: 12px;
         display: flex;
         align-items: center;
@@ -1438,13 +1446,13 @@ h5 {
         height: 20px;
         width: 20px;
         margin-top: -7px;
-        border-color: #000;
+        border-color: var(--text-primary);
         &.rc-slider-handle-dragging {
           box-shadow: none;
         }
       }
       .rc-slider-track {
-        background: var(--text-primary);
+        background: var(--slider-track);
       }
     }
     .products-filter__block__content {
@@ -1690,6 +1698,8 @@ h5 {
     border: 1px solid var(--border-primary);
     border-radius: 50px;
     option {
+      background-color: var(--background);
+      color: var(--text-primary);
       font-size: 15px;
     }
   }
@@ -2036,13 +2046,13 @@ h5 {
   .review__content {
     flex: 1;
     h3 {
+      color: var(--text-primary);
       font-size: 13px;
       font-weight: 700;
       margin-bottom: 4px;
     }
     .review__comment {
       font-size: 13px;
-      color: #000;
       line-height: 155%;
     }
     .react-rater {
@@ -2092,6 +2102,7 @@ h5 {
       margin-bottom: 0;
     }
     h3 {
+      color: var(--text-primary);
       font-size: 59px;
       font-weight: 700;
       margin-bottom: 6px;
@@ -2147,7 +2158,7 @@ h5 {
     }
     > span {
       font-size: 12px;
-      color: #000;
+      color: var(--text-primary);
       margin: 0 auto;
     }
     .punctuation-item__bar {
@@ -2296,7 +2307,7 @@ h5 {
   .cart__btn-back {
     font-weight: 700;
     font-size: 14px;
-    color: #000;
+    color: var(--text-primary);
     margin-right: auto;
     margin-bottom: 40px;
     @include breakpoint(phone) {
@@ -2336,7 +2347,7 @@ h5 {
     }
     strong {
       margin-left: 15px;
-      color: #000;
+      color: var(--text-primary);
       font-weight: 700;
     }
   }
@@ -2513,7 +2524,7 @@ h5 {
     padding: 50px 0;
   }
   a {
-    color: black;
+    color: var(--text-primary);
     font-size: 13px;
     font-weight: 600;
     @include breakpoint(phone) {
@@ -2536,6 +2547,7 @@ h5 {
     width: 448px;
   }
   .form-block__title {
+    color: var(--text-primary);
     font-size: 22px;
     font-weight: 600;
     padding: 0 50px;
@@ -2623,7 +2635,7 @@ h5 {
   .form__signup-link {
     margin-top: 22px;
     font-size: 14px;
-    color: #000;
+    color: var(--text-primary);
     padding-bottom: 2px;
     text-align: center;
     a {
@@ -2691,7 +2703,7 @@ h5 {
 }
 
 .google-btn {
-  color: #000;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   font-weight: 600;

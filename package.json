@@ -36,7 +36,6 @@
     "sass": "^1.26.10",
     "swiper": "^6.5.1",
     "swr": "latest",
-    "use-local-storage": "^3.0.0",
     "use-onclickoutside": "latest"
   },
   "devDependencies": {

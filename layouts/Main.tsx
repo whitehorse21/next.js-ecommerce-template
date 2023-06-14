@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Header from "components/header";
 import { useRouter } from "next/router";
-import useLocalStorage from "use-local-storage";
+import { useContext } from "react";
+import { ThemeContext } from "components/context/theme-context";
 
 type LayoutType = {
   title?: string;
@@ -9,11 +10,7 @@ type LayoutType = {
 };
 
 export default ({ children, title = "Next.js Ecommerce" }: LayoutType) => {
-  const defaultDark = false;
-  const [theme, setTheme] = useLocalStorage(
-    "theme",
-    defaultDark ? "dark" : "light"
-  );
+  const { theme } = useContext(ThemeContext);
 
   const router = useRouter();
   const pathname = router.pathname;
