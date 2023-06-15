@@ -213,6 +213,7 @@ h5 {
 
 .block {
   .block__title {
+    color: var(--text-secondary);
     font-size: 14px;
     margin-bottom: 23px;
   }
@@ -2287,6 +2288,7 @@ h5 {
           justify-content: flex-start;
         }
         .btn {
+          color: var(--text-primary);
           padding: 9px 13px;
           font-size: 10px;
           margin-left: 0;
@@ -2781,6 +2783,7 @@ h5 {
   .checkout__btns {
     margin-bottom: 38px;
     .btn {
+      color: var(--text-primary);
       width: 125px;
       margin-right: 11px;
     }
@@ -2824,6 +2827,7 @@ h5 {
   &.round-options--three {
     margin-right: -6px;
     .round-item {
+      background-color: var(--background-item);
       margin-right: 6px;
       width: calc(100% / 3 - 6px);
     }
@@ -2831,6 +2835,10 @@ h5 {
   &.round-options--two {
     margin-right: -6px;
     .round-item {
+      background-color: var(--background-item);
+      p {
+        color: var(--text-primary);
+      }
       margin-right: 6px;
       width: calc(100% / 2 - 6px);
     }
@@ -2863,6 +2871,9 @@ h5 {
 }
 
 .checkout-items {
+  h3 {
+    color: var(--text-secondary);
+  }
   .checkout-item {
     display: flex;
     align-items: center;
@@ -2874,6 +2885,7 @@ h5 {
       .checkout-item__data {
         width: 110px;
         h3 {
+          color: var(--text-primary);
           font-weight: 600;
           font-size: 14px;
           line-height: 140%;
@@ -2903,7 +2915,7 @@ h5 {
 
 .checkout-total {
   width: 244px;
-  background: #f1f1f1;
+  background: var(--background-secondary);
   border-radius: 40px;
   align-items: center;
   height: 49px;
@@ -2912,7 +2924,11 @@ h5 {
   margin: 34px auto 0 auto;
   justify-content: space-between;
   p {
+    color: var(--text-secondary);
     font-weight: 300;
+  }
+  h3 {
+    color: var(--text-secondary);
   }
 }
 

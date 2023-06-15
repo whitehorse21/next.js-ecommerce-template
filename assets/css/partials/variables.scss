@@ -13,9 +13,12 @@
   --color-red: #ff0000;
 
   --background: white;
+  --background-item: white;
+  --background-secondary: #f1f1f1;
   --text-primary: black;
   --border-primary: #e5e5e5;
   --slider-track: black;
+  --text-secondary: #333333;
 }
 
 [data-theme="dark"] {
@@ -31,9 +34,12 @@
   --color-red: #ff0000;
 
   --background: #202020;
+  --background-item: #59736c;
+  --background-secondary: #33322e;
   --text-primary: white;
   --border-primary: #33322e;
   --slider-track: #fbb03b;
+  --text-secondary: #e0e0e0;
 }
 
 @mixin inputPlaceholder() {
