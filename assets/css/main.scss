@@ -1751,6 +1751,8 @@ h5 {
   align-items: center;
   justify-content: center;
   border: 1px solid #d8d8d8;
+  color: var(--text-primary);
+  background-color: var(--background);
   &:hover,
   &.btn-heart--active {
     color: #fff;

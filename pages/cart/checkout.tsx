@@ -103,7 +103,13 @@ const CheckoutPage = () => {
                       <div className="select-wrapper select-form">
                         <select>
                           <option>Country</option>
+                          <option value="USA">United States of America</option>
+                          <option value="Canada">Canada</option>
+                          <option value="Brazil">Brazil</option>
                           <option value="Argentina">Argentina</option>
+                          <option value="France">France</option>
+                          <option value="Germany">Germany</option>
+                          <option value="England">England</option>
                         </select>
                       </div>
                     </div>
