@@ -173,7 +173,7 @@ const CheckoutPage = () => {
 
                 <div className="checkout-total">
                   <p>Total cost</p>
-                  <h3>${priceTotal}</h3>
+                  <h3>${priceTotal.toFixed(6)}</h3>
                 </div>
               </div>
             </div>

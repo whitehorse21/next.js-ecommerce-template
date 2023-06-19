@@ -21,17 +21,18 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
   }, []);
 
   function updateWindowSize() {
+    setSlidesPerView(1);
+    setSpaceBetween(30);
+    setCenteredSlides(true);
+
     if (window.innerWidth > 768) {
-      setSlidesPerView(3);
-      setSpaceBetween(35);
-      setCenteredSlides(false);
-    } else if (window.innerWidth > 1024) {
-      setSlidesPerView(4);
-      setSpaceBetween(65);
-      setCenteredSlides(false);
-    } else {
       setSlidesPerView(2);
-      setSpaceBetween(30);
+      setSpaceBetween(40);
+      setCenteredSlides(false);
+    }
+    if (window.innerWidth > 1024) {
+      setSlidesPerView(3);
+      setSpaceBetween(65);
       setCenteredSlides(false);
     }
   }

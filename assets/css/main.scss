@@ -131,6 +131,11 @@ body {
   }
 }
 
+.app-main {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
 span {
   font-weight: 300;
 }
@@ -263,7 +268,7 @@ h5 {
 }
 
 .btn {
-  color: #000000;
+  color: var(--text-primary);
   cursor: pointer;
   &.btn--rounded {
     font-size: 12px;
@@ -744,7 +749,7 @@ h5 {
           display: flex;
           width: 40px;
           height: 40px;
-          color: var(--background);
+          color: var(--text-primary);
           font-size: 15px;
           margin-right: 10px;
           background-color: var(--color-orange);
@@ -2268,6 +2273,9 @@ h5 {
       display: flex;
       width: 100%;
       align-items: center;
+      a {
+        color: var(--text-primary);
+      }
       @include breakpoint(phone) {
         margin-top: 30px;
       }
@@ -2631,6 +2639,7 @@ h5 {
     padding-bottom: 14px;
     font-weight: 600;
     text-transform: none;
+    color: var(--text-primary);
     @include breakpoint(phone) {
       padding-top: 19px;
       padding-bottom: 19px;
@@ -2916,20 +2925,23 @@ h5 {
 }
 
 .checkout-total {
-  width: 244px;
+  min-width: 244px;
   background: var(--background-secondary);
   border-radius: 40px;
   align-items: center;
   height: 49px;
   display: flex;
   padding: 0 36px;
+  gap: 10px;
   margin: 34px auto 0 auto;
   justify-content: space-between;
   p {
+    flex-shrink: 0;
     color: var(--text-secondary);
     font-weight: 300;
   }
   h3 {
+    flex-shrink: 1;
     color: var(--text-secondary);
   }
 }
