@@ -121,6 +121,9 @@ const CheckoutPage = () => {
                           <option value="France">France</option>
                           <option value="Germany">Germany</option>
                           <option value="England">England</option>
+                          <option value="England">China</option>
+                          <option value="England">Russia</option>
+                          <option value="England">Japan</option>
                         </select>
                       </div>
                     </div>
