@@ -3,8 +3,11 @@ import { useSelector } from "react-redux";
 import CheckoutStatus from "../../components/checkout-status";
 import CheckoutItems from "../../components/checkout/items";
 import { RootState } from "store";
+import { useRouter } from "next/router";
 
 const CheckoutPage = () => {
+  const router = useRouter();
+
   const priceTotal = useSelector((state: RootState) => {
     const cartItems = state.cart.cartItems;
     let totalPrice = 0;
@@ -27,8 +30,16 @@ const CheckoutPage = () => {
           <div className="checkout-content">
             <div className="checkout__col-6">
               <div className="checkout__btns">
-                <button className="btn btn--rounded btn--yellow">Log in</button>
-                <button className="btn btn--rounded btn--border">
+                <button
+                  className="btn btn--rounded btn--yellow"
+                  onClick={() => router.push("/login")}
+                >
+                  Log in
+                </button>
+                <button
+                  className="btn btn--rounded btn--border"
+                  onClick={() => router.push("/register")}
+                >
                   Sign up
                 </button>
               </div>

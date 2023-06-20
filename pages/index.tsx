@@ -3,7 +3,6 @@ import PageIntro from "../components/page-intro";
 import ProductsFeatured from "../components/products-featured";
 import Footer from "../components/footer";
 import Subscribe from "../components/subscribe";
-import ThemeProvider from "../components/context/theme-provider";
 
 const IndexPage = () => {
   return (
