@@ -1,13 +1,33 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore from "swiper";
-import { EffectFade, Navigation } from "swiper";
+import { useEffect, useRef } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-SwiperCore.use([EffectFade, Navigation]);
+import { Navigation } from 'swiper/modules';
+
 
 const PageIntro = () => {
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  useEffect(() => {
+    // Ensure navigation buttons are properly initialized after Swiper mounts
+    if (swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, []);
+
   return (
     <section className="page-intro">
-      <Swiper navigation effect="fade" className="swiper-wrapper">
+      <Swiper 
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        navigation={true}
+        modules={[Navigation]} 
+        loop={false}
+        className="swiper-wrapper"
+      >
         <SwiperSlide>
           <div
             className="page-intro__slide"

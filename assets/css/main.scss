@@ -639,59 +639,180 @@ h5 {
   }
 }
 
+// Global Swiper navigation button fixes
+.swiper-button-prev,
+.swiper-button-next {
+  &::after {
+    display: none !important;
+    content: "" !important;
+    font-size: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  font-size: 0 !important;
+  color: transparent !important;
+  > * {
+    display: none !important;
+  }
+}
+
 .page-intro {
   position: relative;
+  
+  // Ensure Swiper container allows button clicks
+  .swiper {
+    position: relative;
+    overflow: visible; // Allow buttons to be visible outside slide area
+  }
+  
+  // Ensure Swiper wrapper doesn't block button clicks
+  .swiper-wrapper {
+    position: relative;
+  }
+  
   .swiper-button-prev,
   .swiper-button-next {
-    bottom: 20px;
-    top: auto;
-    transform: translateX(50%);
-    right: 14%;
-    left: auto;
-    width: 42px;
-    height: 42px;
-    z-index: 100;
-    font-size: 13px;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.12);
+    top: 50% !important; // Center vertically
+    bottom: auto !important;
+    transform: translateY(-50%) !important; // Center vertically
+    width: 42px !important;
+    height: 42px !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    cursor: pointer !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-radius: 50% !important;
+    margin-top: 0 !important;
+    pointer-events: auto !important;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation; // Improve touch responsiveness
+    
+    // Ensure buttons are clickable even when disabled
+    &.swiper-button-disabled {
+      opacity: 0.35 !important;
+      cursor: auto;
+      pointer-events: none;
+      display: flex !important; // Still show disabled buttons
+      visibility: visible !important;
+    }
+    
+    // Completely hide default Swiper ::after pseudo-element (default arrow/text)
+    &::after {
+      display: none !important;
+      content: "" !important;
+      font-size: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      position: absolute !important;
+      left: -9999px !important;
+    }
+    
+    // Hide any text content - make button text invisible
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    overflow: hidden;
+    
+    // Hide any direct child elements (span, etc.) that might contain text
+    // But keep pointer events enabled so buttons remain clickable
+    > * {
+      display: none !important;
+      font-size: 0 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+    
+    // Show buttons on all screen sizes
     @include breakpoint(phone) {
       width: 52px;
       height: 52px;
-      bottom: 30px;
-      font-size: 17px;
-      display: flex;
     }
     @include breakpoint(tablet-lg) {
       width: 72px;
       height: 72px;
-      bottom: 30px;
-      font-size: 21px;
-      display: flex;
     }
+    
+    // Show only our custom icon via :before - this must be the only visible element
+    // Note: Individual buttons will override this with their specific icons
     &:before {
-      color: var(--background);
-      content: "\e80b";
-      font-family: "icons";
+      color: var(--background) !important;
+      font-family: "icons" !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      display: block !important;
+      text-indent: 0 !important;
+      width: auto !important;
+      height: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative !important;
+      z-index: 10 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      pointer-events: none !important; // Don't block clicks on the button
+      @include breakpoint(phone) {
+        font-size: 17px !important;
+      }
+      @include breakpoint(tablet-lg) {
+        font-size: 21px !important;
+      }
     }
+    
     &:hover {
       background: var(--background);
       &:before {
-        color: #000;
+        color: #000 !important;
       }
     }
   }
-  .swiper-button-next {
-    right: 20px;
+  
+  .swiper-button-prev {
+    left: 20px !important; // Position on left side
+    right: auto !important;
+    transform: translateY(-50%) !important; // Center vertically (override base transform)
+    display: flex !important; // Ensure it's always visible
+    visibility: visible !important;
+    opacity: 1 !important;
     @include breakpoint(phone) {
-      right: 7%;
+      left: 30px !important;
+    }
+    @include breakpoint(tablet-lg) {
+      left: 40px !important;
     }
     &:before {
-      content: "\e811";
+      content: "\e80b" !important; // Left arrow icon
+    }
+    
+    // Make sure disabled state is still visible (just dimmed)
+    &.swiper-button-disabled {
+      opacity: 0.35 !important;
+      display: flex !important; // Still show it even when disabled
+      visibility: visible !important;
+    }
+  }
+  
+  .swiper-button-next {
+    right: 20px !important;
+    left: auto !important;
+    transform: translateY(-50%) !important; // Center vertically (override base transform)
+    @include breakpoint(phone) {
+      right: 30px !important;
+    }
+    @include breakpoint(tablet-lg) {
+      right: 40px !important;
+    }
+    &:before {
+      content: "\e811" !important; // Right arrow icon
     }
   }
   .swiper-pagination-progressbar {
@@ -787,6 +908,7 @@ h5 {
       height: 100%;
       position: absolute;
       background-color: rgba(0, 0, 0, 0.2);
+      pointer-events: none; // Don't block clicks on navigation buttons
     }
     .container {
       z-index: 10;
