@@ -90,7 +90,7 @@ const Content = ({ product }: ProductContent) => {
               <select onChange={onSelectChange}>
                 <option>Choose size</option>
                 {productsSizes.map(type => (
-                  <option value={type.label}>{type.label}</option>
+                  <option key={type.id || type.label} value={type.label}>{type.label}</option>
                 ))}
               </select>
             </div>

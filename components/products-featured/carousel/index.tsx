@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
 
 type ProductsCarouselType = {
-  products: ProductTypeList[];
+  products: ProductTypeList[] | null;
 };
 
 const ProductsCarousel = ({ products }: ProductsCarouselType) => {

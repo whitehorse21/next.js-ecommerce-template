@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import ProductsCarousel from './carousel';
+import { ProductTypeList } from 'types';
 
 const ProductsFeatured = () => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState<ProductTypeList[] | null>(null);
 
   useEffect(() => {
     const fetcher = async () => {

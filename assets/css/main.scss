@@ -431,14 +431,14 @@ h5 {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     flex-shrink: 0;
     @include breakpoint(phone) {
-      gap: 12px;
+      gap: 24px;
     }
     @include breakpoint(tablet-lg) {
       margin-left: 0;
-      gap: 15px;
+      gap: 28px;
     }
     button {
       margin-left: 0;

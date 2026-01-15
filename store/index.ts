@@ -9,25 +9,21 @@ import {
 } from 'redux-persist'
 
 //COMBINING ALL REDUCERS
-const reducer = {
-  cart: cartReducer,
-  user: userReducer
-}
-
 const rootReducer = combineReducers({
   cart: cartReducer,
   user: userReducer,
 })
 
-let store = configureStore({ 
-  reducer,
+// Create a default store for type inference (server-side version)
+const store = configureStore({ 
+  reducer: rootReducer,
 });
 
 const makeStore = ({ isServer }: { isServer: Boolean }) => {
   if (isServer) {
     //If it's on server side, create a store
-    return store = configureStore({ 
-      reducer,
+    return configureStore({ 
+      reducer: rootReducer,
     });
   } else {
     //If it's on client side, create a store which will persist
@@ -39,7 +35,7 @@ const makeStore = ({ isServer }: { isServer: Boolean }) => {
 
     const persistedReducer = persistReducer(persistConfig, rootReducer); // Create a new reducer with our existing reducer
 
-    store = configureStore({ 
+    const clientStore = configureStore({ 
       reducer: persistedReducer,
       middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
@@ -57,9 +53,9 @@ const makeStore = ({ isServer }: { isServer: Boolean }) => {
     }); // Creating the store again
 
     // @ts-ignore:next-line
-    store.__persistor = persistStore(store); // This creates a persistor object & push that persisted object to .__persistor, so that we can avail the persistability feature
+    clientStore.__persistor = persistStore(clientStore); // This creates a persistor object & push that persisted object to .__persistor, so that we can avail the persistability feature
 
-    return store;
+    return clientStore as any;
   }
 };
 

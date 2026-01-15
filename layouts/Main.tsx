@@ -17,10 +17,15 @@ export default ({ children, title = "Next.js Ecommerce" }: LayoutType) => {
   const router = useRouter();
   const pathname = router.pathname;
 
+  // Ensure title is always a single string (not an array)
+  const pageTitle = typeof title === 'string' 
+    ? title 
+    : 'Next.js Ecommerce';
+
   return (
     <div className="app-main" data-theme={theme}>
       <Head>
-        <title>{title}</title>
+        <title key="page-title">{pageTitle}</title>
       </Head>
 
       <a
