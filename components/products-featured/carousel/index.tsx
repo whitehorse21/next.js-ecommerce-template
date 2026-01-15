@@ -1,8 +1,11 @@
+'use client';
+
 import ProductItem from "./../../product-item";
 import { ProductTypeList } from "types";
 
 // import Swiper core and required components
 import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
 import { useEffect, useState } from "react";
 
 type ProductsCarouselType = {
@@ -15,24 +18,32 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
   const [spaceBetween, setSpaceBetween] = useState(30);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
     updateWindowSize();
     window.addEventListener("resize", updateWindowSize);
     return () => window.removeEventListener("resize", updateWindowSize);
   }, []);
 
   function updateWindowSize() {
+    if (typeof window === 'undefined') return;
+    
+    // Mobile: 1 card
     setSlidesPerView(1);
-    setSpaceBetween(30);
-    setCenteredSlides(true);
+    setSpaceBetween(15);
+    setCenteredSlides(false);
 
-    if (window.innerWidth > 768) {
+    // Tablet: 2 cards (768px and up)
+    if (window.innerWidth >= 768) {
       setSlidesPerView(2);
-      setSpaceBetween(40);
+      setSpaceBetween(20);
       setCenteredSlides(false);
     }
-    if (window.innerWidth > 1024) {
+    // Big screen/Desktop: 3 cards (1024px and up)
+    if (window.innerWidth >= 1024) {
       setSlidesPerView(3);
-      setSpaceBetween(65);
+      setSpaceBetween(30);
       setCenteredSlides(false);
     }
   }
@@ -47,7 +58,16 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
         centeredSlides={centeredSlides}
         watchOverflow={true}
         slidesPerView={slidesPerView}
-        className="swiper-wrapper"
+        direction="horizontal"
+        speed={600}
+        freeMode={false}
+        grabCursor={true}
+        mousewheel={{
+          forceToAxis: true,
+        }}
+        keyboard={{
+          enabled: true,
+        }}
       >
         {products.map((item) => (
           <SwiperSlide key={item.id}>

@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import ProductsCarousel from './carousel';
 import { ProductTypeList } from 'types';
@@ -7,9 +9,18 @@ const ProductsFeatured = () => {
 
   useEffect(() => {
     const fetcher = async () => {
-      const res = await fetch('/api/products');
-      const data = await res.json();
-      setProducts(data);
+      try {
+        const res = await fetch('/api/products');
+        if (!res.ok) {
+          throw new Error(`Failed to fetch products: ${res.status}`);
+        }
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        // Set empty array on error to prevent infinite loading state
+        setProducts([]);
+      }
     };
     fetcher();
   }, []);
