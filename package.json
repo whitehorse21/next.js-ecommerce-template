@@ -46,5 +46,9 @@
     "fslightbox-react": "^1.7.1",
     "node-fetch": "^3.3.2",
     "typescript": "^5.5.4"
+  },
+  "resolutions": {
+    "**/react": "^19.0.0",
+    "**/react-dom": "^19.0.0"
   }
 }
