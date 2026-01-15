@@ -139,7 +139,7 @@ body {
 .github-fixed-link {
   position: fixed;
   left: 20px;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   z-index: 998;
   display: flex;
@@ -891,14 +891,14 @@ h5 {
     }
   }
   .page-intro__slide {
-    height: 450px;
+    height: 720px;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: var(--background);
     @include breakpoint(phone) {
-      height: 90vh;
+      height: 100vh;
     }
     &:before {
       content: "";

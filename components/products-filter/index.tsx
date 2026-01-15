@@ -45,7 +45,6 @@ const ProductsFilter = () => {
               range
               min={0} 
               max={20} 
-              // @ts-expect-error - rc-slider v10 range prop typing issue
               defaultValue={priceRange}
               onChange={(value) => {
                 if (Array.isArray(value) && value.length === 2) {

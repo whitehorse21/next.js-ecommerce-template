@@ -31,7 +31,7 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-1.jpg')" }}
+            style={{ backgroundImage: "url('/images/slide-1.png')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
@@ -47,7 +47,7 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-2.jpg')" }}
+            style={{ backgroundImage: "url('/images/slide-2.png')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
