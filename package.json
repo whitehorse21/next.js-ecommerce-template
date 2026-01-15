@@ -36,7 +36,7 @@
     "sass": "^1.80.0",
     "swiper": "^11.1.0",
     "swr": "^2.2.5",
-    "use-onclickoutside": "^1.1.0"
+    "use-onclickoutside": "^0.4.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",
