@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef, useContext, type RefObject } from "react";
 import { useSelector } from "react-redux";
 import useOnClickOutside from "use-onclickoutside";
 import Logo from "../../assets/icons/logo";
@@ -55,8 +55,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
   };
 
   // on click outside
-  useOnClickOutside(navRef as React.RefObject<HTMLElement>, closeMenu);
-  useOnClickOutside(searchRef as React.RefObject<HTMLElement>, closeSearch);
+  useOnClickOutside(navRef as RefObject<HTMLElement>, closeMenu);
+  useOnClickOutside(searchRef as RefObject<HTMLElement>, closeSearch);
 
   return (
     <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>

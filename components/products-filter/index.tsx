@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Checkbox from './form-builder/checkbox';
 import CheckboxColor from './form-builder/checkbox-color';
-import Slider, { Range } from 'rc-slider';
+import { Range } from 'rc-slider';
 
 // data
 import productsTypes from './../../utils/data/products-types';

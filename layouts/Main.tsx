@@ -14,8 +14,7 @@ type LayoutType = {
 export default ({ children, title = "Next.js Ecommerce" }: LayoutType) => {
   const { theme } = useContext(ThemeContext);
 
-  const router = useRouter();
-  const pathname = router.pathname;
+  const { pathname } = useRouter();
 
   // Ensure title is always a single string (not an array)
   const pageTitle = typeof title === 'string' 

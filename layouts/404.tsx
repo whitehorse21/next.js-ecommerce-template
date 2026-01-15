@@ -1,15 +1,15 @@
 import Head from "next/head";
 import Header from "components/header";
 import { useRouter } from "next/router";
+import type { ReactNode } from "react";
 
 type LayoutType = {
   title?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 export default ({ children, title = "Next.js Ecommerce" }: LayoutType) => {
-  const router = useRouter();
-  const pathname = router.pathname;
+  const { pathname } = useRouter();
 
   return (
     <div className="app-main">
