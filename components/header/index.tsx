@@ -22,8 +22,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
   );
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const navRef = useRef(null);
-  const searchRef = useRef(null);
+  const navRef = useRef<HTMLElement>(null);
+  const searchRef = useRef<HTMLButtonElement>(null);
 
   const { theme, toggleTheme } = useContext(ThemeContext);
 
