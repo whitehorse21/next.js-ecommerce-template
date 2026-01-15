@@ -82,10 +82,7 @@ const Footer = () => {
             <ul>
               <li>Contact</li>
               <li>
-                <a href="#">whitehorse9021@gmail.com</a>
-              </li>
-              <li>
-                <a href="#">Hotline: +1 214-717-4816</a>
+                <a href="https://github.com/whitehorse21" target="_blank">Github</a>
               </li>
             </ul>
           </div>

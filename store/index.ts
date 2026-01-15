@@ -41,6 +41,19 @@ const makeStore = ({ isServer }: { isServer: Boolean }) => {
 
     store = configureStore({ 
       reducer: persistedReducer,
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: {
+            ignoredActions: [
+              'persist/PERSIST',
+              'persist/REHYDRATE',
+              'persist/REGISTER',
+              'persist/PAUSE',
+              'persist/PURGE',
+              'persist/FLUSH',
+            ],
+          },
+        }),
     }); // Creating the store again
 
     // @ts-ignore:next-line

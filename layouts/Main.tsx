@@ -3,6 +3,7 @@ import Header from "components/header";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { ThemeContext } from "components/context/theme-context";
+import GithubIcon from "../assets/icons/github";
 
 type LayoutType = {
   title?: string;
@@ -20,6 +21,16 @@ export default ({ children, title = "Next.js Ecommerce" }: LayoutType) => {
       <Head>
         <title>{title}</title>
       </Head>
+
+      <a
+        href="https://github.com/whitehorse21"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="github-fixed-link"
+        aria-label="GitHub"
+      >
+        <GithubIcon />
+      </a>
 
       <Header />
 
