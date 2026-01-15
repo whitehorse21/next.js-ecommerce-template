@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Checkbox from './form-builder/checkbox';
 import CheckboxColor from './form-builder/checkbox-color';
-import { Range } from 'rc-slider';
+import Slider from 'rc-slider';
 
 // data
 import productsTypes from './../../utils/data/products-types';
@@ -10,6 +10,7 @@ import productsSizes from './../../utils/data/products-sizes';
 
 const ProductsFilter = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [priceRange, setPriceRange] = useState<[number, number]>([3, 10]);
 
   const addQueryParams = () => {
     // query params changes
@@ -40,7 +41,18 @@ const ProductsFilter = () => {
         <div className="products-filter__block">
           <button type="button">Price</button>
           <div className="products-filter__block__content">
-            <Range min={0} max={20} defaultValue={[3, 10]} />
+            <Slider 
+              range
+              min={0} 
+              max={20} 
+              // @ts-expect-error - rc-slider v10 range prop typing issue
+              defaultValue={priceRange}
+              onChange={(value) => {
+                if (Array.isArray(value) && value.length === 2) {
+                  setPriceRange([value[0] as number, value[1] as number]);
+                }
+              }}
+            />
           </div>
         </div>
         
