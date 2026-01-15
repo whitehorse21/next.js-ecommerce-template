@@ -44,7 +44,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
     window.onscroll = function () {
       headerClass();
     };
-  }, []);
+  }, [router.pathname, isErrorPage]);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -110,18 +110,14 @@ const Header = ({ isErrorPage }: HeaderType) => {
             sunColor={!onTop ? "black" : "white"}
             size={24}
           />
-          <Link href="/cart" legacyBehavior>
-            <button className="btn-cart">
-              <i className="icon-cart"></i>
-              {cartItems.length > 0 && (
-                <span className="btn-cart__count">{cartItems.length}</span>
-              )}
-            </button>
+          <Link href="/cart" className="btn-cart">
+            <i className="icon-cart"></i>
+            {cartItems.length > 0 && (
+              <span className="btn-cart__count">{cartItems.length}</span>
+            )}
           </Link>
-          <Link href="/login" legacyBehavior>
-            <button className="site-header__btn-avatar">
-              <i className="icon-avatar"></i>
-            </button>
+          <Link href="/login" className="site-header__btn-avatar">
+            <i className="icon-avatar"></i>
           </Link>
           <button
             onClick={() => setMenuOpen(true)}

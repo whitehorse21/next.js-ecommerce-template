@@ -91,7 +91,7 @@ const Footer = () => {
 
       <div className="site-footer__bottom">
         <div className="container">
-          <p>DESIGN BY WHITEHORSE - © 2023. ALL RIGHTS RESERVED.</p>
+          <p>DESIGN BY WHITEHORSE - © {new Date().getFullYear()}. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>

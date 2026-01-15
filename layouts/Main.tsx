@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import { ThemeContext } from "components/context/theme-context";
 import GithubIcon from "../assets/icons/github";
+import type { ReactNode } from "react";
 
 type LayoutType = {
   title?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 export default ({ children, title = "Next.js Ecommerce" }: LayoutType) => {

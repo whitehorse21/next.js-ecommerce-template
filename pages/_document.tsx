@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Document, {
+  Html,
   Head,
   Main,
   NextScript,
@@ -29,7 +30,7 @@ export default class CustomDocument extends Document<DocumentProps> {
     const { isProduction } = this.props;
 
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           {/* We only want to add the scripts if in production */}
           {isProduction && (
@@ -59,7 +60,7 @@ export default class CustomDocument extends Document<DocumentProps> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

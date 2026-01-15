@@ -3,11 +3,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 // fake data
 import products from '../../utils/data/products';
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req);
-
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   // fake loading time
-  setTimeout(() => {
-    res.status(200).json(products);
-  }, 800);
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  res.status(200).json(products);
 }
