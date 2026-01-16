@@ -152,29 +152,29 @@ body {
   border-radius: 50%;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  
+
   svg {
     width: 24px;
     height: 24px;
     fill: var(--text-primary);
     transition: all 0.3s ease;
   }
-  
+
   &:hover {
     background-color: var(--text-primary);
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    
+
     svg {
       fill: var(--background);
     }
   }
-  
+
   @include breakpoint(phone) {
     left: 30px;
     width: 52px;
     height: 52px;
-    
+
     svg {
       width: 26px;
       height: 26px;
@@ -660,18 +660,18 @@ h5 {
 
 .page-intro {
   position: relative;
-  
+
   // Ensure Swiper container allows button clicks
   .swiper {
     position: relative;
     overflow: visible; // Allow buttons to be visible outside slide area
   }
-  
+
   // Ensure Swiper wrapper doesn't block button clicks
   .swiper-wrapper {
     position: relative;
   }
-  
+
   .swiper-button-prev,
   .swiper-button-next {
     top: 50% !important; // Center vertically
@@ -692,7 +692,7 @@ h5 {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation; // Improve touch responsiveness
-    
+
     // Ensure buttons are clickable even when disabled
     &.swiper-button-disabled {
       opacity: 0.35 !important;
@@ -701,7 +701,7 @@ h5 {
       display: flex !important; // Still show disabled buttons
       visibility: visible !important;
     }
-    
+
     // Completely hide default Swiper ::after pseudo-element (default arrow/text)
     &::after {
       display: none !important;
@@ -714,14 +714,14 @@ h5 {
       position: absolute !important;
       left: -9999px !important;
     }
-    
+
     // Hide any text content - make button text invisible
     font-size: 0 !important;
     line-height: 0 !important;
     color: transparent !important;
     text-shadow: none !important;
     overflow: hidden;
-    
+
     // Hide any direct child elements (span, etc.) that might contain text
     // But keep pointer events enabled so buttons remain clickable
     > * {
@@ -731,7 +731,7 @@ h5 {
       visibility: hidden !important;
       pointer-events: none !important;
     }
-    
+
     // Show buttons on all screen sizes
     @include breakpoint(phone) {
       width: 52px;
@@ -741,7 +741,7 @@ h5 {
       width: 72px;
       height: 72px;
     }
-    
+
     // Show only our custom icon via :before - this must be the only visible element
     // Note: Individual buttons will override this with their specific icons
     &:before {
@@ -767,7 +767,7 @@ h5 {
         font-size: 21px !important;
       }
     }
-    
+
     &:hover {
       background: var(--background);
       &:before {
@@ -775,11 +775,13 @@ h5 {
       }
     }
   }
-  
+
   .swiper-button-prev {
     left: 20px !important; // Position on left side
     right: auto !important;
-    transform: translateY(-50%) !important; // Center vertically (override base transform)
+    transform: translateY(
+      -50%
+    ) !important; // Center vertically (override base transform)
     display: flex !important; // Ensure it's always visible
     visibility: visible !important;
     opacity: 1 !important;
@@ -792,7 +794,7 @@ h5 {
     &:before {
       content: "\e80b" !important; // Left arrow icon
     }
-    
+
     // Make sure disabled state is still visible (just dimmed)
     &.swiper-button-disabled {
       opacity: 0.35 !important;
@@ -800,11 +802,13 @@ h5 {
       visibility: visible !important;
     }
   }
-  
+
   .swiper-button-next {
     right: 20px !important;
     left: auto !important;
-    transform: translateY(-50%) !important; // Center vertically (override base transform)
+    transform: translateY(
+      -50%
+    ) !important; // Center vertically (override base transform)
     @include breakpoint(phone) {
       right: 30px !important;
     }
@@ -1052,7 +1056,7 @@ h5 {
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  
+
   &.product-item--loading {
     .product__image,
     .product__description h3,
@@ -1237,12 +1241,12 @@ h5 {
     position: relative;
     margin: 0 -10px;
     padding: 0 10px;
-    
+
     @include breakpoint(phone) {
       margin: 0 -20px;
       padding: 0 20px;
     }
-    
+
     .swiper {
       width: 100%;
       overflow: visible;
@@ -1250,22 +1254,26 @@ h5 {
       padding-bottom: 20px;
       margin: 0;
     }
-    
+
     .swiper-wrapper {
       display: flex !important;
       flex-direction: row !important;
-      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      transition-timing-function: cubic-bezier(
+        0.25,
+        0.46,
+        0.45,
+        0.94
+      ) !important;
       will-change: transform;
     }
-    
+
     .swiper-slide {
-      width: 100% !important;
       flex-shrink: 0 !important;
       display: flex !important;
       height: auto;
       transition: transform 0.3s ease;
       box-sizing: border-box;
-      
+
       .product-item {
         width: 100% !important;
         max-width: 100% !important;
@@ -1273,7 +1281,7 @@ h5 {
         flex: 1;
       }
     }
-    
+
     // Smooth scrolling
     .swiper-container {
       -webkit-overflow-scrolling: touch;
