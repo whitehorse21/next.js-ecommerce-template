@@ -3,8 +3,9 @@ import { useEffect, useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 const PageIntro = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -22,8 +23,12 @@ const PageIntro = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
+        direction={"horizontal"}
+        pagination={{
+          dynamicBullets: true,
+        }}
         navigation={true}
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
         loop={false}
         className="swiper-wrapper"
       >
