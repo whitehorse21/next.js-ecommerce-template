@@ -31,7 +31,6 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
 
   function updateWindowSize() {
     if (typeof window === "undefined") return;
-    console.log(window.innerWidth);
 
     // Big screen/Desktop: 3 cards (1024px and up)
     if (window.innerWidth >= 1024) {
