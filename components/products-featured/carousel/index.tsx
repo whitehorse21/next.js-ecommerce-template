@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 type ProductsCarouselType = {
   products: ProductTypeList[] | null;
@@ -67,9 +67,10 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
         centeredSlides={centeredSlides}
         watchOverflow={true}
         slidesPerView={slidesPerView}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         direction="horizontal"
-        speed={600}
+        speed={300}
+        autoplay={true}
         freeMode={false}
         grabCursor={true}
         mousewheel={{
