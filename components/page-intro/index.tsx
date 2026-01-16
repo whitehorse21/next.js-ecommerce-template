@@ -1,11 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useEffect, useRef } from 'react';
-import type { Swiper as SwiperType } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { useEffect, useRef } from "react";
+import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
 
-import { Navigation } from 'swiper/modules';
-
+import { Navigation } from "swiper/modules";
 
 const PageIntro = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -19,12 +18,12 @@ const PageIntro = () => {
 
   return (
     <section className="page-intro">
-      <Swiper 
+      <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
         navigation={true}
-        modules={[Navigation]} 
+        modules={[Navigation]}
         loop={false}
         className="swiper-wrapper"
       >
@@ -52,6 +51,38 @@ const PageIntro = () => {
             <div className="container">
               <div className="page-intro__slide__content">
                 <h2>Make your house into a home</h2>
+                <a href="/products" className="btn-shop">
+                  <i className="icon-right"></i>Shop now
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div
+            className="page-intro__slide"
+            style={{ backgroundImage: "url('/images/slide-3.png')" }}
+          >
+            <div className="container">
+              <div className="page-intro__slide__content">
+                <h2>Designed for modern living</h2>
+                <a href="/products" className="btn-shop">
+                  <i className="icon-right"></i>Shop now
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div
+            className="page-intro__slide"
+            style={{ backgroundImage: "url('/images/slide-4.png')" }}
+          >
+            <div className="container">
+              <div className="page-intro__slide__content">
+                <h2>Style meets comfort this season</h2>
                 <a href="/products" className="btn-shop">
                   <i className="icon-right"></i>Shop now
                 </a>
