@@ -779,6 +779,44 @@ h5 {
       }
     }
   }
+  .swiper-pagination {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 20px !important;
+
+    @include breakpoint(phone) {
+      bottom: 200px !important;
+    }
+    @include breakpoint(tablet-lg) {
+      bottom: 160px !important;
+    }
+
+    @include breakpoint(desktop-lg) {
+      bottom: 140px !important;
+    }
+
+    .swiper-pagination-bullet {
+      background: #fff !important;
+      width: 12px !important;
+      height: 12px !important;
+    }
+    .swiper-pagination-bullet-active {
+      width: 12px !important;
+      height: 12px !important;
+    }
+
+    @include breakpoint(phone) {
+      .swiper-pagination-bullet {
+        background: #fff !important;
+        width: 16px !important;
+        height: 16px !important;
+      }
+      .swiper-pagination-bullet-active {
+        width: 16px !important;
+        height: 16px !important;
+      }
+    }
+  }
 
   .swiper-button-prev {
     left: 20px !important;
